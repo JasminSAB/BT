@@ -1,0 +1,28 @@
+﻿@model IEnumerable<BT.ViewModels.AccountViewModel>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<table class="table">
+    <thead class="thead-dark">
+        @*  *@
+    <tr>
+        <th scope="col">AccountId</th>
+        <th scope="col">Name</th>
+        <th scope="col">Address</th>
+        <th scope="col">Number of contacts</th>
+    </tr>
+</thead>
+<tbody>
+    @foreach (var account in Model)
+    {
+        <tr bgcolor="@account.AccountTypeCss" class="alert">
+            <td>@account.AccountId</td>
+            <td>@account.Name</td>
+            <td>@account.Address</td>
+            <td>@account.NumberOfContacts</td>
+        </tr>
+    }
+
+</tbody>
+</table>
